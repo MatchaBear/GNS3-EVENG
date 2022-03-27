@@ -1,6 +1,10 @@
 # GNS3-EVENG
  journey installing those
 
+==========================
+putty logs tweak
+&H-&Y&M&D-&T.log
+==========================
 
 
 GNS3, EVE-NG
@@ -61,9 +65,22 @@ IOS VIRL: https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-
 PNETLAB
 1. download the OVA
 2. static ip the OVA
-3. ssh to the OVA <- find the ip by using: "ifconfig|more" , find the nic "pnet0"
-4. pull image using ishare https://www.youtube.com/watch?v=nKJsGjzpOck
-5. 
+3. ssh to the OVA <- from the workstation: find the ip by using "ifconfig|more" , find the nic "pnet0" , then login with root:admin
+4. pull image using ishare https://www.youtube.com/watch?v=94NpE4a2gT0 : ishare search iol, ishare pull
+.. download the iol from here: https://drive.google.com/drive/folders/16i5bceR4XL4l_HMt8iPnxtGekVTcgUmc
+.. must look into here to see where i should really copy the images: https://www.eve-ng.net/index.php/documentation/howtos/howto-add-cisco-iol-ios-on-linux/ <- /opt/unetlab/addons/iol/bin/
+5. fix permission: https://youtu.be/94NpE4a2gT0 , or use david bombal video: https://www.youtube.com/watch?v=YKYdq3Ww_C0
+6. add node, under IOL , run / start the switch <- **use HTML5 GUI !!!** , double-click the switch to open console
+7. enable ssh: https://www.thegeekstuff.com/2013/08/enable-ssh-cisco/
+	- cppm ip: 192.168.174.10, sw ip: 192.168.174.12, eve-ng ip: 192.168.174.33, pnetlab ip: 192.168.174.34
+8. pnetlab download winxp: https://drive.google.com/drive/u/1/folders/1KgR5VGgMzMHOgVD_WPM5bdAP8VEk5WwF <- video org indo, request access
+	- di si arab: https://drive.google.com/drive/folders/16bM0uDfS58OXr7GYBQ0dmfOEJy_uUemi
+9. pake winxp gak bisa, mgkn dot1x nya uda jadul, pakenya win10, copy ke sini imagenya sftp://root@192.168.174.34/opt/unetlab/addons/qemu/win-xp-Lite <- notice nama foldernya
+10. go to GUI pnetlab, do fix permission again
+11. when adding windows node, choose E1000 as network adapter, dont use pcnet, pcnet is undetectable.
+12. enter username: Test123 <- there is the password hint at the image
+
+
 
 
 
