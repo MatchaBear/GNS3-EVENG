@@ -81,6 +81,38 @@ PNETLAB
 12. enter username: Test123 <- there is the password hint at the image
 
 
+======================
+pnetlab login 192.168.18.13:20000 174.34
+matchabear
+tXnvwj4!#9P34PM
+======================
+
+NAT
+21932 -> cppm
+20000 -> pnetlab
+======================
+
+free ddns
+
+Step 1 - Create a Hostname. (this step is already complete)
+Step 2 - Download the Dynamic Update Client (DUC).
+The DUC keeps your hostname updated with your current IP address.
+Step 3 - Port Forward your router.
+Done with all 3 steps?
+
+cppm: https://matchabear96.ddns.net:443
+pnetlab: matchabear96.ddns.net:444
+
+
+======================
+ACTIVE DIRECTORY windows 2016 datacenter evaluation
+1. install vmware tools 11.3.5.18557794, choose Complete option
+2. administrator:P@ssw0rd1234
+3. add role https://www.c-sharpcorner.com/blogs/active-directory-domain-services-in-windows-server-2016
+4. After installation, configuration required it says, then there is this promote this server to domain controller, click, Add a new forest , "bernhomelab.iamgood" <- root domain name
+5. deselect DNS server as domain controller capabilities. GC cannot be deselected. Leave RODC unticked.
+6. Directory Services Restore Mode (DSRM) password: I@mG00D
 
 
 
+======================
