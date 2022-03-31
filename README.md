@@ -106,13 +106,74 @@ pnetlab: matchabear96.ddns.net:444
 
 ======================
 ACTIVE DIRECTORY windows 2016 datacenter evaluation
+======================
 1. install vmware tools 11.3.5.18557794, choose Complete option
 2. administrator:P@ssw0rd1234
 3. add role https://www.c-sharpcorner.com/blogs/active-directory-domain-services-in-windows-server-2016
 4. After installation, configuration required it says, then there is this promote this server to domain controller, click, Add a new forest , "bernhomelab.iamgood" <- root domain name
 5. deselect DNS server as domain controller capabilities. GC cannot be deselected. Leave RODC unticked.
 6. Directory Services Restore Mode (DSRM) password: I@mG00D
+7. netbios name: BERNHOMELAB
+8. DATABASE folder: C:\Windows\NTDS
+LOG files folder: C:\Windows\NTDS
+SYSVOL volder: C:\Windows\SYSVOL
+===============
+SUMMARY:
+Configure this server as the first Active Directory domain controller in a new forest.
 
+The new domain name is "bernhomelab.iamgood". This is also the name of the new forest.
 
+The NetBIOS name of the domain: BERNHOMELAB
 
-======================
+Forest Functional Level: Windows Server 2016
+
+Domain Functional Level: Windows Server 2016
+
+Additional Options:
+
+  Global catalog: Yes
+
+  DNS Server: No
+
+Database folder: C:\Windows\NTDS
+
+Log file folder: C:\Windows\NTDS
+
+SYSVOL folder: C:\Windows\SYSVOL
+
+The password of the new domain Administrator will be the same as the password of the local Administrator of this computer.
+===============
+#
+# Windows PowerShell script for AD DS Deployment
+#
+
+Import-Module ADDSDeployment
+Install-ADDSForest `
+-DatabasePath "C:\Windows\NTDS" `
+-DomainMode "WinThreshold" `
+-DomainName "bernhomelab.iamgood" `
+-DomainNetbiosName "BERNHOMELAB" `
+-ForestMode "WinThreshold" `
+-InstallDns:$false `
+-LogPath "C:\Windows\NTDS" `
+-NoRebootOnCompletion:$false `
+-SysvolPath "C:\Windows\SYSVOL" `
+-Force:$true
+===============
+Windows Server 2016 domain controllers have a default for the security setting named "Allow cryptography algorithms compatible with Windows NT 4.0" that prevents weaker cryptography algorithms when establishing security channel sessions.
+
+For more information about this setting, see Knowledge Base article 942564 (http://go.microsoft.com/fwlink/?LinkId=104751).
+===============
+9. click Install to promote, then server restarts.
+10. user created: hello world helloworld@bernhomelab.iamgood , pass: P@ssw0rd, password never expires
+https://aventistech.com/replace-clearpass-default-self-sign-ssl-certificate/
+https://wifiwizardofoz.com/802-1x-wlan-using-aruba-controller-clearpass
+https://wifiwizardofoz.com/aruba-clearpass-admin-authentication-ad/
+https://www.ldapadministrator.com/support_faq.htm
+https://docs.oracle.com/cd/E19683-01/817-4843/auto46/index.html#:~:text=Sometimes%20the%20N2L%20server%20logs,of%2Ddate%20or%20incomplete%20results.
+11. create new authentication source di clearpass, use helloworld user as bind DN
+12. from softerra LDAP browser 4.5: (after creating a new group profile & add the AD)
+- host: 192.168.18.13:20160 <- port forwarding set at vmware workstation's virtual network editor
+- base dn: DC=bernhomelab,DC=iamgood
+- URL: ldap://192.168.18.13:20160/DC=bernhomelab,DC=iamgood <- auto-generated
+- credentials tab > Other credentials: 
