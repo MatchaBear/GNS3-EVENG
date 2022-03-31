@@ -177,3 +177,4 @@ https://docs.oracle.com/cd/E19683-01/817-4843/auto46/index.html#:~:text=Sometime
 - base dn: DC=bernhomelab,DC=iamgood
 - URL: ldap://192.168.18.13:20160/DC=bernhomelab,DC=iamgood <- auto-generated
 - credentials tab > Other credentials: Principal: use helloworld@bernhomelab.iamgood , pass: P@ssw0rd
+13. save configuration in softerra: C:\Users\bernh\Documents\softerra <- saved config file is in here
