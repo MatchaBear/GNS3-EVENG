@@ -176,4 +176,4 @@ https://docs.oracle.com/cd/E19683-01/817-4843/auto46/index.html#:~:text=Sometime
 - host: 192.168.18.13:20160 <- port forwarding set at vmware workstation's virtual network editor
 - base dn: DC=bernhomelab,DC=iamgood
 - URL: ldap://192.168.18.13:20160/DC=bernhomelab,DC=iamgood <- auto-generated
-- credentials tab > Other credentials: 
+- credentials tab > Other credentials: Principal: use helloworld@bernhomelab.iamgood , pass: P@ssw0rd
