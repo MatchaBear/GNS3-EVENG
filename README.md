@@ -183,3 +183,66 @@ https://docs.oracle.com/cd/E19683-01/817-4843/auto46/index.html#:~:text=Sometime
 - URL: ldap://192.168.18.13:20160/DC=bernhomelab,DC=iamgood <- auto-generated
 - credentials tab > Other credentials: Principal: use helloworld@bernhomelab.iamgood , pass: P@ssw0rd
 13. save configuration in softerra: C:\Users\bernh\Documents\softerra <- saved config file is in here
+
+
+===============
+Install vmware tools:
+right click on vm, manage > install vmware tools
+===============
+DNS server winserver 2016
+1. add role dns server
+2. check at .net framework 3.5
+3. next next until install
+4. once done, click Tools > DNS
+5. right click at the server icon, configure a dns server
+6. zone name: berrylab.com
+7. file is stored @ %systemroot%\system32\dns
+8. ip: 192.168.174.61/24 gw .2
+9. A record: clabv689 (clabv689.berrylab.com) -> 192.168.174.16
+10. back to cppm: configure dns server as .61, 2nd: 1.0.0.1, 3rd: 8.8.4.4
+
+failed to join domain error:
+Adding host to AD domain...
+INFO - Fetched REALM 'BERNHOMELAB.IAMGOOD' from domain FQDN
+'clabv689.berrylab.com'
+INFO - Fetched the NETBIOS name 'BERNHOMELAB'
+INFO - Creating domain directories for 'BERNHOMELAB'
+INFO - Using Administrator as the CLABV689's username
+Enter Administrator's password:
+kinit succeeded but ads_sasl_spnego_gensec_bind(KRB5) failed for
+ldap/clabv689.berrylab.com with user[Administrator] realm[BERNHOMELAB.IAMGOOD]: Unexpected information received
+Failed to join domain: failed to connect to AD: Unexpected
+information received
+INFO - Restoring smb configuration
+INFO - Deleting domain directories for 'BERNHOMELAB'
+ERROR - cp68 failed to join the domain BERNHOMELAB.IAMGOOD with
+domain controller as clabv689.berrylab.com
+
+11. not working with zone berrylab.com, created a new one: iamgood.com (still not the actual domain name, should be bernhomelab.iamgood)
+12. created A record: bernhomelab (bernhomelab.iamgood.com) -> 192.168.174.16
+
+
+Join domain failed
+Adding host to AD domain...
+INFO - Fetched REALM 'BERNHOMELAB.IAMGOOD' from domain FQDN
+'bernhomelab.iamgood.com'
+INFO - Fetched the NETBIOS name 'BERNHOMELAB'
+INFO - Creating domain directories for 'BERNHOMELAB'
+INFO - Using Administrator as the BERNHOMELAB's username
+Enter Administrator's password:
+kinit succeeded but ads_sasl_spnego_gensec_bind(KRB5) failed for
+ldap/bernhomelab.iamgood.com with user[Administrator] realm[BERNHOMELAB.IAMGOOD]: Unexpected information received
+Failed to join domain: failed to connect to AD: Unexpected
+information received
+INFO - Restoring smb configuration
+INFO - Deleting domain directories for 'BERNHOMELAB'
+ERROR - cp68 failed to join the domain BERNHOMELAB.IAMGOOD with
+domain controller as bernhomelab.iamgood.com
+Join domain failed
+
+13. not working again, created a new zone: iamgood DOANG
+14. created A record: bernhomelab (bernhomelab.iamgood) -> 192.168.174.16
+https://community.arubanetworks.com/community-home/digestviewer/viewthread?MID=16959
+
+
+
