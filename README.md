@@ -95,6 +95,8 @@ NAT
 20161 -> ldaps
 26822 -> cppm 6.8.9 ssh
 26922 -> cppm 6.9.9 ssh
+20022 -> switch ssh <- open with putty
+20023 -> switch telnet <- open with putty
 ======================
 
 free ddns
