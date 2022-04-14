@@ -87,7 +87,7 @@ matchabear
 tXnvwj4!#9P34PM
 ======================
 
-NAT
+NAT - from 192.168.18.13 to VMs
 21932 -> cppm 6.9.9
 20000 -> pnetlab
 20160 -> ldap
@@ -99,6 +99,13 @@ NAT
 20023 -> switch telnet <- open with putty
 ======================
 
+NAT - from home router to 192.168.18.0 segment
+443 -> 21932
+444 -> 20000
+442 -> 20689
+446 -> 3389
+
+
 free ddns
 
 Step 1 - Create a Hostname. (this step is already complete)
@@ -109,7 +116,7 @@ Done with all 3 steps?
 
 cppm: https://matchabear96.ddns.net:443
 pnetlab: matchabear96.ddns.net:444
-
+rdp: berrydemo.ddns.net:446
 
 ======================
 ACTIVE DIRECTORY windows 2016 datacenter evaluation
