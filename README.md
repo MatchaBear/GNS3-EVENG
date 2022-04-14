@@ -121,6 +121,7 @@ rdp: berrydemo.ddns.net:446
 ======================
 ACTIVE DIRECTORY windows 2016 datacenter evaluation
 ======================
+administrator:P@ssw0rd1234
 1. install vmware tools 11.3.5.18557794, choose Complete option
 2. administrator:P@ssw0rd1234
 3. add role https://www.c-sharpcorner.com/blogs/active-directory-domain-services-in-windows-server-2016
@@ -199,6 +200,7 @@ Install vmware tools:
 right click on vm, manage > install vmware tools
 ===============
 DNS server winserver 2016
+administrator:P@ssw0rd12345
 1. add role dns server
 2. check at .net framework 3.5
 3. next next until install
