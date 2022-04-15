@@ -97,6 +97,8 @@ NAT - from 192.168.18.13 to VMs
 26922 -> cppm 6.9.9 ssh
 20022 -> switch ssh <- open with putty
 20023 -> switch telnet <- open with putty
+20180 -> cpSGH 192.168.174.188
+20182 -> cpSGH ssh
 ======================
 
 NAT - from home router to 192.168.18.0 segment
@@ -104,7 +106,8 @@ NAT - from home router to 192.168.18.0 segment
 444 -> 20000
 442 -> 20689
 446 -> 3389
-
+448 -> 20180
+449 -> 20182
 
 free ddns
 
