@@ -88,17 +88,19 @@ tXnvwj4!#9P34PM
 ======================
 
 NAT - from 192.168.18.13 to VMs
-21932 -> cppm 6.9.9
-20000 -> pnetlab
-20160 -> ldap
-20689 -> cppm 6.8.9
-20161 -> ldaps
-26822 -> cppm 6.8.9 ssh
-26922 -> cppm 6.9.9 ssh
-20022 -> switch ssh <- open with putty
-20023 -> switch telnet <- open with putty
-20180 -> cpSGH 192.168.174.188
-20182 -> cpSGH ssh
+192.168.174.10:21932 -> cppm 6.9.9
+192.168.174.34:20000 -> pnetlab
+192.168.174.16:20160 -> ldap
+192.168.174.9:20689 -> cppm 6.8.9
+192.168.174.16:20161 -> ldaps
+192.168.174.9:26822 -> cppm 6.8.9 ssh
+192.168.174.10:26922 -> cppm 6.9.9 ssh
+192.168.174.12:20022 -> switch ssh <- open with putty
+192.168.174.12:20023 -> switch telnet <- open with putty
+192.168.174.188:20180 -> cpSGH 192.168.174.188 https
+192.168.174.188:20182 -> cpSGH ssh
+192.168.174.29:29699 -> cp69subs https
+192.168.174.29:29622 -> cp69subs ssh
 ======================
 
 NAT - from home router to 192.168.18.0 segment
@@ -108,7 +110,8 @@ NAT - from home router to 192.168.18.0 segment
 446 -> 3389
 448 -> 20180
 449 -> 20182
-
+447 -> 29622
+450 -> 29699
 free ddns
 
 Step 1 - Create a Hostname. (this step is already complete)
