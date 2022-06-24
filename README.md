@@ -112,6 +112,7 @@ NAT - from home router to 192.168.18.0 segment
 449 -> 20182
 447 -> 29622
 450 -> 29699
+451 -> 5900
 free ddns
 
 Step 1 - Create a Hostname. (this step is already complete)
@@ -123,7 +124,7 @@ Done with all 3 steps?
 cppm: https://matchabear96.ddns.net:443
 pnetlab: matchabear96.ddns.net:444
 rdp: berrydemo.ddns.net:446
-
+vnc mac: berrydem0.ddns.net:451
 ======================
 ACTIVE DIRECTORY windows 2016 datacenter evaluation
 ======================
