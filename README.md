@@ -104,6 +104,10 @@ NAT - from 192.168.18.13 to VMs
 192.168.174.29:29622 -> cp69subs ssh
 192.168.174.29:25432 -> cp69subs postgresql
 192.168.174.27:20122 -> check point ssh
+192.168.174.84:30443 -> cp610-1 https (cp-pub1)
+192.168.174.84:30022 -> cp610-1 ssh (cp-pub1)
+192.168.174.94:31443 -> cp610-2 https (cp-sub1)
+192.168.174.94:31022 -> cp610-2 ssh (cp-sub1)
 ======================
 
 NAT - from home router to 192.168.18.0 segment
