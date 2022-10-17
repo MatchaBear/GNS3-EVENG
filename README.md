@@ -270,5 +270,8 @@ Join domain failed
 14. created A record: bernhomelab (bernhomelab.iamgood) -> 192.168.174.16
 https://community.arubanetworks.com/community-home/digestviewer/viewthread?MID=16959
 
-
-
+===============
+Default IIS folder:
+C:\Users\bernh\Downloads
+%SystemDrive%\inetpub\wwwroot
+===============
